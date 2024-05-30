@@ -1,5 +1,5 @@
 {
-  "extends": "eslint-config-love",
+  "extends": "standard-with-typescript",
   "parserOptions": {
     "project": "./tsconfig.json"
   }
