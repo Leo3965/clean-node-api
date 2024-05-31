@@ -6,6 +6,25 @@
 import type {Config} from 'jest';
 
 const config: Config = {
+  // A list of paths to directories that Jest should use to search for files in
+  roots: [
+    "<rootDir>/src"
+  ],
+  // An array of glob patterns indicating a set of files for which coverage information should be collected
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts',
+  ],
+  // The directory where Jest should output its coverage files
+  coverageDirectory: "coverage",
+  // Indicates which provider should be used to instrument code for coverage
+  coverageProvider: "babel",
+  // The test environment that will be used for testing
+  testEnvironment: "node",
+  // A map from regular expressions to paths to transformers
+  transform: {
+    '.+\\.ts$': 'ts-jest'
+  },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -16,24 +35,15 @@ const config: Config = {
   // cacheDirectory: "C:\\Users\\leona\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  clearMocks: true,
+  //clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
-
-  // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
-
-  // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  //collectCoverage: true,
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
   //   "\\\\node_modules\\\\"
   // ],
-
-  // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -125,10 +135,7 @@ const config: Config = {
   // The root directory that Jest should scan for tests and modules within
   // rootDir: undefined,
 
-  // A list of paths to directories that Jest should use to search for files in
-  roots: [
-    "<rootDir>/src"
-  ],
+
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
@@ -144,9 +151,6 @@ const config: Config = {
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
-
-  // The test environment that will be used for testing
-  testEnvironment: "jest-environment-node",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -173,11 +177,6 @@ const config: Config = {
 
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
-
-  // A map from regular expressions to paths to transformers
-  transform: {
-    '.+\\.ts$': 'ts-jest'
-  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
