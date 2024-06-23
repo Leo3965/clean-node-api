@@ -3,26 +3,26 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from 'jest'
 
 const config: Config = {
   // A list of paths to directories that Jest should use to search for files in
   roots: [
-    "<rootDir>/src"
+    '<rootDir>/src'
   ],
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts',
+    '<rootDir>/src/**/*.ts'
   ],
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "babel",
+  coverageProvider: 'babel',
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: 'node',
   // A map from regular expressions to paths to transformers
   transform: {
-    '.+\\.ts$': 'ts-jest'
+    '.+\\.ts$': 'ts-jest',
   },
 
   // All imported modules in your tests should be mocked automatically
@@ -135,8 +135,6 @@ const config: Config = {
   // The root directory that Jest should scan for tests and modules within
   // rootDir: undefined,
 
-
-
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
 
@@ -195,6 +193,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
 
-export default config;
+export default config
