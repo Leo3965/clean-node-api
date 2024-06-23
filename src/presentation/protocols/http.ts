@@ -1,4 +1,4 @@
-export interface Http {
+export interface HttpResponse {
   statusCode: number
   body: any
 }
