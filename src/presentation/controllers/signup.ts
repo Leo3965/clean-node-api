@@ -1,12 +1,12 @@
 import {
   type Controller,
-  type EmailValidator,
   type HttpRequest,
   type HttpResponse
 } from '../protocols'
 import { InvalidParameterError, MissingParameterError } from '../errors'
 import { badRequest, serverError } from '../helpers/http-helper'
 import { type AddAccount } from '../../domain/usecases/add-account'
+import { type EmailValidator } from '../protocols/email-validator'
 
 export class SignUpController implements Controller {
   constructor(

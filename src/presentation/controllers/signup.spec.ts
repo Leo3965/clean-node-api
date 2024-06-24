@@ -4,7 +4,7 @@ import {
   MissingParameterError,
   ServerError
 } from '../errors'
-import { type EmailValidator } from '../protocols'
+import { type EmailValidator } from '../protocols/email-validator'
 import {
   type AddAccount,
   type AddAccountModel
