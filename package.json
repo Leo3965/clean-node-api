@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --watch",
-    "test:staged": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch --silent --noStackTrace",
+    "test:ci": "npm test -- --coverage",
+    "test:staged": "npm test -- --findRelatedTests"
   },
   "keywords": [],
   "author": "Leoanrdo Freitas",

@@ -12,7 +12,8 @@ const config: Config = {
   testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
-  }
+  },
+  testMatch: ['**/*.spec.ts', '**/*.test.ts']
 }
 
 export default config
