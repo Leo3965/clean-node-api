@@ -12,7 +12,7 @@ interface SutTypes {
 
 const makeAddAccountRepository = (): any => {
   class AddAccountRepositoryStub implements AddAccountRepository {
-    async add(account: AddAccountModel): Promise<AccountModel> {
+    async add(_: AddAccountModel): Promise<AccountModel> {
       const fakeAcc = {
         id: 'valid id',
         name: 'valid name',
@@ -30,7 +30,7 @@ const makeAddAccountRepository = (): any => {
 
 const makeEncrypter = (): Encrypter => {
   class EncrypterStub implements Encrypter {
-    async encrypt(value: string): Promise<string> {
+    async encrypt(_: string): Promise<string> {
       return Promise.resolve('hashed password')
     }
   }
