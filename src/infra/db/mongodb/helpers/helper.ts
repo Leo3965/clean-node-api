@@ -1,0 +1,21 @@
+import { Collection, MongoClient } from 'mongodb'
+
+export const MongoHelper = {
+  client: null as MongoClient,
+
+  async connect(): Promise<void> {
+    this.client = await MongoClient.connect(process.env.MONGODB_URI)
+  },
+
+  async disconnect(): Promise<void> {
+    await this.client.close()
+  },
+
+  getCollection(collectionName: string): Collection {
+    return this.client.db().collection(collectionName)
+  },
+
+  async findById<T>(id: string): Promise<T> {
+    return await this.client.db().findOne({ where: { id } })
+  }
+}
