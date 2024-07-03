@@ -1,11 +1,12 @@
 {
   "name": "clean-node-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main/server.ts",
   "scripts": {
     "start": "sucrase-node src/main/server.ts",
-    "test": "jest --passWithNoTests --runInBand",
-    "test:unit": "npm test -- --watch --silent --noStackTrace",
+    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "test:unit": "npm test -- --watch --silent --noStackTrace -c ./jest-unit.config.js",
+    "test:integration": "npm test -- --watch -c ./jest-integration.config.js",
     "test:ci": "npm test -- --coverage",
     "test:staged": "npm test -- --findRelatedTests"
   },
@@ -20,6 +21,7 @@
     "@types/jest": "^29.5.12",
     "@types/mongodb": "^4.0.7",
     "@types/node": "^20.12.13",
+    "@types/supertest": "^6.0.2",
     "@types/validator": "^13.12.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint": "^8.57.0",
@@ -34,6 +36,7 @@
     "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
     "sucrase": "^3.35.0",
+    "supertest": "^7.0.0",
     "ts-jest": "^29.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
@@ -43,5 +46,8 @@
     "express": "^4.19.2",
     "mongodb": "^6.8.0",
     "validator": "^13.12.0"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
