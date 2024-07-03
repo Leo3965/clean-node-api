@@ -7,7 +7,7 @@ import { MongoMapper } from './mongo-mapper'
 export class AccountMongoRepository implements AddAccountRepository {
   async add(account: AddAccountModel): Promise<AccountModel> {
     const accountCollection = MongoHelper.getCollection('accounts')
-    account._id = await accountCollection.insertOne(account)
-    return MongoMapper.map(account)
+    const id = await accountCollection.insertOne(account)
+    return MongoMapper.map(account, id.insertedId.toString())
   }
 }
