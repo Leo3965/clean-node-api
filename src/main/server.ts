@@ -1,6 +1,6 @@
 import app from './config/app'
 import config from '../utils/config'
-import { MongoHelper } from '../infra/db/mongodb/helpers/helper'
+import { MongoHelper } from '../infra/db/mongodb/helpers/mongo-helper'
 
 const PORT = config.port || 3000
 
